@@ -18,18 +18,22 @@ describe("Pencil Durability Kata Tests", () => {
     });
 
     it("Writes text to paper that already has text written on it", () => {
+      //GIVEN
       const pencil = new Pencil();
       const paper = "Hi, my name is Chandler ";
+      
+      //WHEN
       const result = pencil.writeOnPaper(paper, "and I love to code!");
 
+      //THEN
       expect(result).to.equal("Hi, my name is Chandler and I love to code!");
     });
 
     it("Decreases pencil durability by 5 after writing 'hello' with a durability of 50", () => {
       const pencil = new Pencil(50);
-      const paper = "";
+      const paper = '';
 
-      pencil.writeOnPaper(paper, "hello");
+      pencil.writeOnPaper(paper, "hello")
 
       const result = pencil.getPencilDurability();
 
@@ -38,7 +42,7 @@ describe("Pencil Durability Kata Tests", () => {
 
     it("Decreases pencil durability by 10 after writing 'hello world' with a durability of 50", () => {
       const pencil = new Pencil(50);
-      const paper = "";
+      const paper = '';
 
       pencil.writeOnPaper(paper, "hello world");
 
@@ -49,7 +53,7 @@ describe("Pencil Durability Kata Tests", () => {
 
     it("Decreases pencil durability by 9 after writing 'Chandler' with a durability of 50", () => {
       const pencil = new Pencil(50);
-      const paper = "";
+      const paper = '';
 
       pencil.writeOnPaper(paper, "Chandler");
 
@@ -60,18 +64,18 @@ describe("Pencil Durability Kata Tests", () => {
 
     it("Writes CHANDLER with a durability of 10 and returns 'CHAND   '", () => {
       const pencil = new Pencil(10);
-      const paper = "";
+      const paper = '';
 
       const result = pencil.writeOnPaper(paper, "CHANDLER");
 
       expect(result).to.equal("CHAND   ");
     });
-  });
+  })
 
   describe("Sharpening", () => {
     it("Resets the durability of the pencil to 10 after sharpening pencil", () => {
       const pencil = new Pencil(10);
-      const paper = "";
+      const paper = '';
 
       pencil.writeOnPaper(paper, "Hi!");
       pencil.sharpen();
@@ -83,7 +87,7 @@ describe("Pencil Durability Kata Tests", () => {
 
     it("Resets the durability of the pencil to 20 after sharpening pencil", () => {
       const pencil = new Pencil(20);
-      const paper = "";
+      const paper = '';
 
       pencil.writeOnPaper(paper, "Hello again!");
       pencil.sharpen();
@@ -128,7 +132,7 @@ describe("Pencil Durability Kata Tests", () => {
 
       expect(result).to.equal(0);
     });
-  });
+  })
 
   describe("Erasing", () => {
     it("Erases the last instance of 'sea' off the paper with text", () => {
@@ -179,7 +183,7 @@ describe("Pencil Durability Kata Tests", () => {
 
       expect(result).to.equal(10);
     });
-  });
+  })
 
   describe("Editing", () => {
     it("Replaces the blank space with apple", () => {
@@ -208,5 +212,5 @@ describe("Pencil Durability Kata Tests", () => {
 
       expect(result).to.equal(undefined);
     });
-  });
+  })
 });
